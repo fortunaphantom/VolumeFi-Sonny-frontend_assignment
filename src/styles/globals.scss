@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Work Sans');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #43486a #22273d;
+}
+
+body {
+  font-family: 'Work Sans';
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  background-image: url(/assets/Background.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-color: black;
+}
+
+main {
+  height: 100vh;
+}
+
+header {
+  background-color: #222c;
+  position: fixed;
+  width: 100%;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    position: relative;
+
+    .logo {
+      position: absolute;
+      left: 10px;
+    }
+
+    h1 {
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 0 110px 0 0;
+      font-weight: bold;
+    }
+
+    .wallet-connect {
+      position: absolute;
+      right: 10px;
+    }
+  }
+}
+
+.wallet-connect-button {
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 0px 24px;
+  color: white;
+  background: black;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.disconnected {
+    background: #bee719;
+    color: black;
+
+    &:hover:not(:active) {
+      background: #8aa814;
+    }
+  }
+
+  &.connected {
+    label.chain {
+      margin: 0 8px 0 4px;
+    }
+    label.address {
+      margin: 0 0px 0 8px;
+    }
+
+    &:hover:not(:active) {
+      background: #111;
+    }
+  }
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.token-swap {
+  border-radius: 12px;
+  padding: 24px;
+  width: 400px;
+  display: flex;
+  background: radial-gradient(#ffffff00 0%, #ffffff00 60%, #ffffff22 100%);
+  box-shadow: 0 0 5px 1px #fff;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  h3 {
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .input-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  .token-input {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+
+    input {
+      padding: 10px 50px 10px 20px;
+      border: 1px solid #0088cc;
+      outline: none;
+      font-family: 'Work Sans';
+      font-size: 18px;
+      font-weight: bold;
+      width: 100%;
+      border-radius: 8px;
+      background: #fffd;
+
+      &:read-only {
+        background: #fff6;
+      }
+    }
+
+    span {
+      position: absolute;
+      right: 10px;
+      font-weight: bold;
+      color: #999;
+    }
+  }
+
+  .exchange-input {
+    border: none;
+    cursor: pointer;
+    background: radial-gradient(#fff 0%, #000 90%, #000 100%);
+    border-radius: 30px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s;
+    margin: 10px 0;
+
+    &:hover {
+      background: radial-gradient(#0a5bc5 0%, #000 90%, #000 100%);
+    }
+  }
+
+  .estimation-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  .balance-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .button-box {
+    padding: 20px 0 0 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.loading-button {
+  border: none;
+  background: black;
+  color: white;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover:not(:active) {
+    background: #111;
+  }
+
+  &:disabled {
+    background: #666a;
+    cursor: unset;
+    &:hover {
+      background: #666a;
+    }
+  }
+}
