@@ -7,6 +7,7 @@ const ERC20 = require('abi/ERC20.json');
 const FACTORY = require('abi/IUniswapV2Factory.json');
 const PAIR = require('abi/IUniswapV2Pair.json');
 
+// swap function
 export const swapTokens = async (
   srcToken: tTokenInput,
   destToken: tTokenInput,
@@ -59,6 +60,7 @@ export const swapTokens = async (
   }
 };
 
+// getAmountOut function in the router
 export const getAmountOut = async (
   address1: string,
   address2: string,
